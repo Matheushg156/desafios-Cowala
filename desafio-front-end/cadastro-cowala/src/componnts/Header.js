@@ -6,10 +6,10 @@ import cowalaText from '../images/cowalaText.png';
 function Header () {
     return (
       <header className="container-header">
-        <div>
+        <div className="container-logo">
           <img src={ logo } alt="cowala-logo" />
         </div>
-        <div>
+        <div className="container-cowala-text">
           <img src={ cowalaText } alt="cowala-text" />
         </div>
       </header>

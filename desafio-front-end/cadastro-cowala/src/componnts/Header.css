@@ -4,3 +4,12 @@
   display: flex;
   justify-content: flex-start;
 }
+
+.container-logo {
+  padding: 10px;
+}
+
+.container-cowala-text {
+  margin-left: 10px;
+  margin-top: 30px;
+}
