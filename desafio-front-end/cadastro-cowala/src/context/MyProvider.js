@@ -4,10 +4,13 @@ import MyContext from './MyContext';
 
 function MyProvider({ children }) {
   const [name, setName] = useState('');
+  const [work, setWork] = useState('');
 
   const contextValue = {
     name,
+    work,
     setName,
+    setWork,
   };
 
   return (
