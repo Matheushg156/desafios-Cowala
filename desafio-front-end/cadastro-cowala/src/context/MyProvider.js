@@ -5,12 +5,15 @@ import MyContext from './MyContext';
 function MyProvider({ children }) {
   const [name, setName] = useState('');
   const [work, setWork] = useState('');
+  const [phone, setPhone] = useState('');
 
   const contextValue = {
     name,
     work,
+    phone,
     setName,
     setWork,
+    setPhone,
   };
 
   return (
