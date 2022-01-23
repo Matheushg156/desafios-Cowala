@@ -47,58 +47,64 @@ function Form() {
 
   return (
     <div className="container-form">
-      <Input
-        id="input-name"
-        label="Nome"
-        name="name"
-        placeholder="Digite seu nome"
-        value={ name }
-        onChange={ ({ target }) => setName(target.value) }
-      />
-      <div className="container-inputs">
+      <form className="form">
         <Input
-          id="input-work"
-          label="Profissão"
-          name="work"
-          placeholder="Digite sua profissão"
-          value={ work }
-          onChange={ ({ target }) => setWork(target.value) }
+          id="input-name"
+          label="Nome"
+          className="inputStyle"
+          name="name"
+          placeholder="Digite seu nome"
+          value={ name }
+          onChange={ ({ target }) => setName(target.value) }
         />
-        <Input
-          id="input-phone"
-          label="Celular"
-          name="phone"
-          placeholder="Digite seu celular"
-          value={ phone }
-          onChange={ ({ target }) => setPhone(maskPhone(target.value)) }
-        />
-      </div>
-      <div className="container-inputs">
-        <Input
-          id="input-IP"
-          label="Meu IP"
-          name="IP"
-          placeholder="Clique no botão para obter seu IP"
-          value={ IP }
-        />
-        <Button
-          label="ENCONTRAR IP"
-          onClick={ handleClick }
-          className="btnIP"
-        />
-      </div>
-      <div className="container-inputs">
-        <Button
-          label="SALVAR"
-          onClick={ saveForm }
-          className="btnsSalvarLimpar"
-        />
-        <Button
-          label="LIMPAR"
-          onClick={ clearInfosInLocalStorage }
-          className="btnsSalvarLimpar"
-        />
-      </div>
+        <div className="container-inputs">
+          <Input
+            id="input-work"
+            label="Profissão"
+            className="inputStyle"
+            name="work"
+            placeholder="Digite sua profissão"
+            value={ work }
+            onChange={ ({ target }) => setWork(target.value) }
+          />
+          <Input
+            id="input-phone"
+            label="Celular"
+            className="inputStyle"
+            name="phone"
+            placeholder="Digite seu celular"
+            value={ phone }
+            onChange={ ({ target }) => setPhone(maskPhone(target.value)) }
+          />
+        </div>
+        <div className="container-inputs">
+          <Input
+            id="input-IP"
+            label="Meu IP"
+            className="inputStyle"
+            name="IP"
+            placeholder="Clique no botão para obter seu IP"
+            value={ IP }
+          />
+          <Button
+            label="ENCONTRAR IP"
+            onClick={ handleClick }
+            className="btnIP"
+          />
+        </div>
+        <div className="container-btns">
+          <Button
+            label="SALVAR"
+            onClick={ saveForm }
+            className="btnsSalvarLimpar"
+          />
+          <Button
+            label="LIMPAR"
+            onClick={ clearInfosInLocalStorage }
+            className="btnsSalvarLimpar"
+          />
+        </div>
+      </form>
     </div>
   );
 }
