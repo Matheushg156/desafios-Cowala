@@ -1,0 +1,55 @@
+.container-form {
+  background-color: #EDEDED;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 80px;
+  max-width: 80vw;
+  padding: 20px;
+  width: 100%;
+}
+
+.form {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  width: 30vw;
+}
+
+.inputStyle {
+  border: 1px solid #c8d3e4;
+  height: 12px;
+  padding: 12px;
+}
+
+.container-inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.container-btns {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.btnIP {
+  background-color: #00D9D0;
+  border: none;
+  color: white;
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btnsSalvarLimpar {
+  background-color: #0A1633;
+  border: none;
+  color: white;
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+}
