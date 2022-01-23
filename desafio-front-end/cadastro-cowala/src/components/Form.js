@@ -84,16 +84,19 @@ function Form() {
         <Button
           label="ENCONTRAR IP"
           onClick={ handleClick }
+          className="btnIP"
         />
       </div>
       <div className="container-inputs">
         <Button
           label="SALVAR"
           onClick={ saveForm }
+          className="btnsSalvarLimpar"
         />
         <Button
           label="LIMPAR"
           onClick={ clearInfosInLocalStorage }
+          className="btnsSalvarLimpar"
         />
       </div>
     </div>
