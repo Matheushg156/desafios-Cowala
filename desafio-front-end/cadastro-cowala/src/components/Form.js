@@ -5,6 +5,7 @@ import Button from './Button';
 import getIpFromApi from '../helpers/fetchIp';
 import saveInfos from '../helpers/saveInfos';
 import getInfos from '../helpers/getInfos';
+import clearInfos from '../helpers/clearInfos';
 import './Form.css';
 
 function Form() {
@@ -34,6 +35,14 @@ function Form() {
   function saveForm() {
     const formData = { name, work, phone, IP };
     saveInfos(formData);
+  }
+
+  function clearInfosInLocalStorage() {
+    clearInfos();
+    setName('');
+    setWork('');
+    setPhone('');
+    setIP('');
   }
 
   return (
@@ -77,10 +86,16 @@ function Form() {
           onClick={ handleClick }
         />
       </div>
-      <Button
-        label="SALVAR"
-        onClick={ saveForm }
-      />
+      <div className="container-inputs">
+        <Button
+          label="SALVAR"
+          onClick={ saveForm }
+        />
+        <Button
+          label="LIMPAR"
+          onClick={ clearInfosInLocalStorage }
+        />
+      </div>
     </div>
   );
 }
