@@ -1,12 +1,22 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import MyContext from '../context/MyContext';
 import Input from './Input';
 import Button from './Button';
 import getIpFromApi from '../helpers/fetchIp';
+import saveInfos from '../helpers/saveInfos';
+import getInfos from '../helpers/getInfos';
 import './Form.css';
 
 function Form() {
   const { name, setName, work, setWork, phone, setPhone, IP, setIP } = useContext(MyContext);
+
+  useEffect(() => {
+    const infos = getInfos();
+    setName(infos.name);
+    setWork(infos.work);
+    setPhone(infos.phone);
+    setIP(infos.IP);
+  }, []);
 
   function maskPhone(value) {
     return value
@@ -19,6 +29,11 @@ function Form() {
   async function handleClick() {
     const IPFromApi = await getIpFromApi();
     setIP(IPFromApi);
+  }
+
+  function saveForm() {
+    const formData = { name, work, phone, IP };
+    saveInfos(formData);
   }
 
   return (
@@ -49,7 +64,7 @@ function Form() {
           onChange={ ({ target }) => setPhone(maskPhone(target.value)) }
         />
       </div>
-      <div>
+      <div className="container-inputs">
         <Input
           id="input-IP"
           label="Meu IP"
@@ -58,10 +73,14 @@ function Form() {
           value={ IP }
         />
         <Button
-          label="Salvar"
+          label="ENCONTRAR IP"
           onClick={ handleClick }
         />
       </div>
+      <Button
+        label="SALVAR"
+        onClick={ saveForm }
+      />
     </div>
   );
 }
