@@ -1,21 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Input.css';
 
 function Input({ id, name, value, label, placeholder, onChange, className }) {
   return (
-    <div>
+    <div className="container-input">
       <label htmlFor={ id }>
         { label }
-        <input
-          type="text"
-          id={ id }
-          placeholder={ placeholder }
-          name={ name }
-          className={ className }
-          value={ value }
-          onChange={ onChange }
-        />
       </label>
+      <input
+        type="text"
+        id={ id }
+        placeholder={ placeholder }
+        name={ name }
+        className={ className }
+        value={ value }
+        onChange={ onChange }
+      />
     </div>
   );
 }
@@ -36,7 +37,7 @@ Input.defaultProps = {
   name: '',
   placeholder: '',
   value: '',
-  onChange: '',
+  onChange: null,
   className: '',
 };
 

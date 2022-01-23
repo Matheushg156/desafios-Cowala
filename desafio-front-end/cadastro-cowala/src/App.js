@@ -1,7 +1,7 @@
 import React from 'react';
 import MyProvider from './context/MyProvider';
-import Header from './componnts/Header';
-import Form from './componnts/Form';
+import Header from './components/Header';
+import Form from './components/Form';
 
 function App() {
   return (
