@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
 import MyContext from '../context/MyContext';
 import Input from './Input';
+import Button from './Button';
+import getIpFromApi from '../helpers/fetchIp';
 
 function Form() {
-  const { name, setName, work, setWork, phone, setPhone } = useContext(MyContext);
+  const { name, setName, work, setWork, phone, setPhone, IP, setIP } = useContext(MyContext);
 
   function maskPhone(value) {
     return value
@@ -12,6 +14,11 @@ function Form() {
       .replace(/(\d{5})(\d)/, "$1-$2")
       .replace(/(-\d{4})(\d+?)$/, "$1");
   };
+
+  async function handleClick() {
+    const IPFromApi = await getIpFromApi();
+    setIP(IPFromApi);
+  }
 
   return (
     <div>
@@ -38,6 +45,17 @@ function Form() {
         placeholder="Digite seu celular"
         value={ phone }
         onChange={ ({ target }) => setPhone(maskPhone(target.value)) }
+      />
+      <Input
+        id="input-IP"
+        label="Meu IP"
+        name="IP"
+        placeholder="Clique no botão para obter seu IP"
+        value={ IP }
+      />
+      <Button
+        label="Salvar"
+        onClick={ handleClick }
       />
     </div>
   );
